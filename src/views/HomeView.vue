@@ -1,39 +1,26 @@
 <template>
     <div class="home">
         <h1>Home</h1>
-        <input type="text" v-model="search" />
-        <p>Search term - {{ search }}</p>
-        <div v-for="name in matchingNames" :key="name">
-            <p>{{ name }}</p>
-        </div>
-        <button @click="handleClick">Stop watching</button>
+        <PostList v-if="showPosts" :posts="posts" />
+        <button @click="showPosts = !showPosts">toggle posts</button>
+        <button @click="posts.pop()">Delete a post</button>
     </div>
 </template>
 
 <script>
+import PostList from "../components/PostList.vue"
 import { computed, ref, watch, watchEffect } from "@vue/runtime-core"
 export default {
     name: "Home",
+    components: { PostList },
     setup() {
-        const names = ref(["mario", "yoshi", "luigi", "toad"])
-        const search = ref("")
+        const posts = ref([
+            { title: "Welcome to the blog", body: "Lorem Ipsum fdas fkdsa; fdajf;da fjdklaf dhaufhd afhdao fafhadofdua fdaif dahfid hfudoahfafehwq fheuq fhufehq fqhf eqhf hfoqfh djafha ", id: 1 },
+            { title: "Top 5 CSS", body: "Lorem Ipsum", id: 2 },
+        ])
+        const showPosts = ref(true)
 
-        const stopWatch = watch(search, () => {
-            console.log("watch function run")
-        })
-
-        const stopEffect = watchEffect(() => console.log(search.value))
-
-        const matchingNames = computed(() => {
-            return names.value.filter((name) => name.includes(search.value))
-        })
-
-        const handleClick = () => {
-            stopWatch()
-            stopEffect()
-        }
-
-        return { names, search, matchingNames, handleClick }
+        return { posts, showPosts }
     },
 }
 </script>
