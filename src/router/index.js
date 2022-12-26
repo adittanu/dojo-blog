@@ -4,6 +4,7 @@ import NotFound from "../views/NotFound.vue"
 import Details from "../views/Details.vue"
 import Create from "../views/Create.vue"
 import Tag from "../views/Tag.vue"
+import Realtime from "../views/RealTime.vue"
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,11 @@ const router = createRouter({
             name: "Tag",
             component: Tag,
             props: true,
+        },
+        {
+            path: "/realtime",
+            name: "Realtime",
+            component: Realtime,
         },
     ],
 })
