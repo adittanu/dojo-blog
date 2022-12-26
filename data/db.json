@@ -1,0 +1,50 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "welcome to the new blog",
+      "body": "lorem ipsum dolor sit amet, consectetur",
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "top 5 CSS tips",
+      "body": "lorem ipsum dolor sit amet, consectetur",
+      "tags": [
+        "css",
+        "webdev",
+        "coding"
+      ]
+    },
+    {
+      "title": "f dsf",
+      "body": "fdsafa",
+      "tags": [
+        "fds fasd",
+        "fdsa",
+        "f dsafdsa"
+      ],
+      "id": 4
+    },
+    {
+      "title": "Thi ",
+      "body": "dsajfkdsla fdjka",
+      "tags": [
+        "css"
+      ],
+      "id": 5
+    },
+    {
+      "title": "New",
+      "body": "COntent",
+      "tags": [
+        "css"
+      ],
+      "id": 6
+    }
+  ]
+}
